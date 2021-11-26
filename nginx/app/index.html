@@ -16,24 +16,76 @@
         <p>Active Projects</p>
       </div>
     </div>
-
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="p-4" style="background-color: #333">
+              <img
+                src="./assets/images/portainer.svg"
+                class="card-img-top img-fluid"
+                alt="portainer.io"
+                style="height: 114px;"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Portainer</h5>
+              <p class="card-text">
+                A centralized service delivery platform for containerized apps
+              </p>
+              <a href="http://overwatch.local:9000" class="btn btn-primary"
+                >Go to Dashboard</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="p-4" style="background-color: #333">
+              <img
+                src="./assets/images/pi-hole.webp"
+                class="card-img-top img-fluid"
+                alt="pi-hole.net"
+                style="height: 114px; width: 114px"
+              />
+              <span class="display-4 text-white">Pi-<span class="fw-bold">hole</span></span>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Pi-hole</h5>
+              <p class="card-text">Network-wide Ad Blocking</p>
+              <a
+                href="http://overwatch.local:8093/admin"
+                class="btn btn-primary"
+                >Go to Dashboard</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="p-4" style="background-color: #333">
+              <img
+                src="./assets/images/traefik-proxy-logo.svg"
+                class="card-img-top img-fluid"
+                alt="traefik.io"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">traefik proxy</h5>
+              <p class="card-text">
+                Simplify networking complexity while designing, deploying, and
+                operating applications.
+              </p>
+              <a href="http://overwatch.local:8080/" class="btn btn-primary"
+                >Go to Dashboard</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script>
-      const now = Date.now();
-      $("#img-1").attr(
-        "src",
-        "https://picsum.photos/seed/" + (now + 1) + "/400/300"
-      );
-      $("#img-2").attr(
-        "src",
-        "https://picsum.photos/seed/" + (now + 2) + "/400/300"
-      );
-      $("#img-3").attr(
-        "src",
-        "https://picsum.photos/seed/" + (now + 3) + "/400/300"
-      );
-    </script>
   </body>
 </html>
