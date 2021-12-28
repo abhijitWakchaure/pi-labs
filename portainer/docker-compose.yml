@@ -4,10 +4,19 @@ services:
   portainer:
     image: portainer/portainer-ce
     container_name: portainer
-    restart: always
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    environment:
+      - TZ=Asia/Kolkata
+    networks:
+      - local
     ports:
       - "9000:9000"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock"
+      - "/var/run/docker.sock:/var/run/docker.sock:ro"
       - "./data:/data"
-      
+    
+networks:
+  local:
+    driver: bridge

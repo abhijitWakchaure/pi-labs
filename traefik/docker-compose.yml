@@ -1,15 +1,25 @@
-version: '3'
+version: '3.8'
 
 services:
-  reverse-proxy:
+  traefik:
     image: traefik:v2.5
     container_name: traefik
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    networks:
+      - proxy
     ports:
       - "80:80"
       - "443:443"
       - "8080:8080"
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - ./etc/traefik:/etc/traefik
-      - ./ssl-certs:/ssl-certs
-      
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - /home/pi/traefik/traefik.yml:/traefik.yml:ro
+      - /home/pi/traefik/acme.json:/ssl-certs/acme.json:ro
+      - /home/pi/traefik/config.yml:/config:ro
+
+
+networks:
+  proxy:
+    external: true

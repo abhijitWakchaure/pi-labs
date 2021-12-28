@@ -1,0 +1,60 @@
+global:
+  checkNewVersion: true
+  sendAnonymousUsage: false
+
+api:
+  dashboard: true  # true by default
+  insecure: true  # Don't do this in production!
+  debug: true
+
+entryPoints:
+  web:
+    address: ":80"
+    # (Optional) Redirect to HTTPS
+    # ---
+    # http:
+    #   redirections:
+    #     entryPoint:
+    #       to: websecure
+    #       scheme: https
+
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    exposedByDefault: false
+  file:
+    directory: /config
+    watch: true
+
+certificatesResolvers:
+# LET'S ENCRYPT:
+# ---
+# 
+  staging:
+    acme:
+      email: myemail@gmail.com
+      storage: /ssl-certs/acme.json
+      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory"
+      httpChallenge:
+        entryPoint: web
+  production:
+    acme:
+      email: myemail@gmail.com
+      storage: /ssl-certs/acme.json
+      caServer: "https://acme-v02.api.letsencrypt.org/directory"
+      httpChallenge:
+        entryPoint: web
+
+
+log:
+  level: DEBUG
+
+# Enable access logs
+# By default it will write to stdout and produce logs in the textual
+# Common Log Format (CLF), extended with additional fields.
+#
+# Optional
+#
+accessLog:
