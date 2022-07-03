@@ -16,8 +16,8 @@ services:
     ports:
       - "5500:80"
     volumes:
-      - "/home/pi/nginx/nginx.conf:/etc/nginx/conf.d/default.conf"
-      - "/home/pi/nginx/app/:/app/"
+      - "/home/pi/pi-labs/nginx/nginx.conf:/etc/nginx/conf.d/default.conf"
+      - "/home/pi/pi-labs/nginx/app/:/app/"
     labels:
       - "traefik.enable=true"
       - "traefik.docker.network=proxy"
