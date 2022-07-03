@@ -1,8 +1,8 @@
-version: '3.8'
+version: '3'
 
 services:
   traefik:
-    image: traefik:v2.5
+    image: traefik:v2.8
     container_name: traefik
     restart: unless-stopped
     security_opt:
@@ -15,9 +15,9 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/pi/traefik/traefik.yml:/traefik.yml:ro
-      - /home/pi/traefik/acme.json:/ssl-certs/acme.json:ro
-      - /home/pi/traefik/config.yml:/config:ro
+      - /home/pi/pi-labs/traefik/traefik.yml:/traefik.yml:ro
+      - /home/pi/pi-labs/traefik/acme.json:/ssl-certs/acme.json:ro
+      - /home/pi/pi-labs/traefik/config.yml:/config:ro
 
 
 networks:
