@@ -134,7 +134,7 @@ setRGBEffect(0x03)
 
 while True:
     setOLEDshow()	
-    if g_temp >= 65:
+    if g_temp >= 85:
         if fan_state != 1:
             setFanSpeed(0x01)
             fan_state = 1        
