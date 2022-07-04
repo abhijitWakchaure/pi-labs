@@ -1,0 +1,18 @@
+version: '3'
+services:
+  plexmediaserver:
+    image: abhijitwakchaure/plexmediaserver-arm64
+    container_name: plexmediaserver
+    restart: unless-stopped
+    security_opt:
+      - no-new-privileges:true
+    ports:
+      - 32400:32400
+    environment:
+      - TZ=Asia/Kolkata
+      - VERSION=docker
+    volumes:
+      - /mnt/Expansion/plexmediaserver/config:/config
+      - /mnt/Expansion/plexmediaserver/transcode:/transcode
+      - /mnt/Expansion/media:/data:ro
+    
