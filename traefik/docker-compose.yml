@@ -15,9 +15,8 @@ services:
       - "8080:8080"
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
-      - /home/pi/pi-labs/traefik/traefik.yml:/traefik.yml:ro
-      - /home/pi/pi-labs/traefik/acme.json:/ssl-certs/acme.json:ro
-      - /home/pi/pi-labs/traefik/config.yml:/config:ro
+      - /home/pi/pi-labs/traefik/config/traefik.yml:/traefik.yml:ro
+      - /home/pi/pi-labs/traefik/ssl-certs/acme.json:/ssl-certs/acme.json
 
 
 networks:
