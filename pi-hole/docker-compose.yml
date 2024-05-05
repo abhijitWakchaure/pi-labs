@@ -25,6 +25,7 @@ services:
       - VIRTUAL_HOST=pihole.local
       - HOSTNAME=pihole.local
       - PROXY_LOCATION=pihole.local
+      - DNSMASQ_LISTENING=all
     # Volumes store your data between container upgrades
     volumes:
       - '/home/pi/pi-labs/pi-hole/etc-pihole:/etc/pihole'
